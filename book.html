@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass/main.css" />
+    <title>book</title>
+  </head>
+  <body>
+    <header></header>
+    <section class="book">
+      <div class="book-left">
+        <h2 class="heading-2">Booking tickets</h2>
+        <a href="#" class="book-btn btn-g" id="gen">Genral</a>
+        <a href="#" class="book-btn btn-v" id="vip">VIP</a>
+
+        <div class="book-detail">
+          <div class="book-calender">
+            <div class="date-lable">
+              <label for="" class="choose-date">Choose a Date:</label>
+            </div>
+            <div class="date-picker">
+              <div class="selected-date" id="date"></div>
+
+              <div class="dates">
+                <div class="month">
+                  <div class="arrows prev-mth">&lt;</div>
+                  <div class="mth"></div>
+                  <div class="arrows next-mth">&gt;</div>
+                </div>
+
+                <div class="days"></div>
+              </div>
+            </div>
+          </div>
+          <div class="book-detail_1">
+            <div class="book-lable">
+              <label for="">Adult:</label>
+            </div>
+            <div class="book-counter">
+              <span
+                class="next far fa-plus-square"
+                id="adultnext"
+                onclick="nextNum()"
+              ></span>
+              <span
+                class="prev far fa-minus-square"
+                id="adultprev"
+                onclick="prevNum()"
+              ></span>
+              <div id="box"></div>
+            </div>
+            <div id="price">
+              <span class="fas fa-rupee-sign" id="price-1">0</span>
+            </div>
+          </div>
+
+          <div class="book-detail_1">
+            <div class="book-lable">
+              <label for="">Children:</label>
+            </div>
+            <div class="book-counter">
+              <span
+                class="next far fa-plus-square"
+                id="childnext"
+                onclick="nextNumChild()"
+              ></span>
+              <span
+                class="prev far fa-minus-square"
+                id="childprev"
+                onclick="prevNumChild()"
+              ></span>
+              <div id="box2"></div>
+            </div>
+            <div id="price1">
+              <span class="fas fa-rupee-sign" id="price-2">0</span>
+            </div>
+          </div>
+
+          <div class="book-detail_1">
+            <div class="book-lable">
+              <label for="">SR.CITIZEN:</label>
+            </div>
+            <div class="book-counter">
+              <span
+                class="next far fa-plus-square"
+                id="srnext"
+                onclick="nextNumSen()"
+              ></span>
+              <span
+                class="prev far fa-minus-square"
+                id="srprev"
+                onclick="prevNumSen()"
+              ></span>
+              <div id="box3"></div>
+            </div>
+            <div id="price2">
+              <span class="fas fa-rupee-sign rupee" id="price-3">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="book-right">
+        <h2 class="heading-2">Ticket Details</h2>
+        <h2 class="type">General</h2>
+        <form action="" class="form">
+          <div class="form-adult">
+            <label for="">No. of Adult:</label>
+            <input type="text" class="form-text" id="noadult" value="0" />
+          </div>
+          <div class="form-child">
+            <label for="">No. of Children:</label>
+            <input type="text" class="form-text" value="0" id="nochild" />
+          </div>
+          <div class="form-sr">
+            <label for="">No. of Sr.Citizen:</label>
+            <input type="text" class="form-text" value="0" id="nosr" />
+          </div>
+
+          <div class="form-total">
+            <label for="">Total Price:</label>
+            <input type="text" class="form-text" id="total" value="0" />
+          </div>
+
+          <button class="confirm">Confirm</button>
+        </form>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/ef34309e38.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/script.js"></script>
+</html>
