@@ -195,6 +195,35 @@ var indexThree = 0;
 var indexFour = 0;
 var indexFive = 0;
 
+var dateSelected = document.getElementById("date");
+// let price = 699;
+// let priceWeOne = 599;
+// let priceWeTwo = 499;
+// let priceWeThree = 799;
+// let priceWeFour = 699;
+// let priceWeFive = 599;
+dateSelected.addEventListener("click", () => {
+  dateValue = dateSelected.getAttribute("data-value")[0];
+
+  if (dateValue == "S") {
+    price = 749;
+    priceWeOne = 649;
+    priceWeTwo = 549;
+    priceWeThree = 849;
+    priceWeFour = 749;
+    priceWeFive = 649;
+  } else {
+    price = 699;
+    priceWeOne = 599;
+    priceWeTwo = 499;
+    priceWeThree = 799;
+    priceWeFour = 699;
+    priceWeFive = 599;
+  }
+
+  console.log(price);
+});
+
 function nextNum() {
   num[index].style.display = "none";
   index = (index + 1) % num.length;
@@ -202,7 +231,7 @@ function nextNum() {
 
   for (let i = 0; i < 100; i++) {
     if (num[index].textContent == parseInt(i)) {
-      document.getElementById("price-1").textContent = parseInt(i * 699);
+      document.getElementById("price-1").textContent = i * price;
       document.getElementById("noadult").value = num[index].textContent;
 
       pricenum1 = document.getElementById("price-1").textContent;
@@ -221,7 +250,9 @@ function nextNumVip() {
 
   for (let i = 0; i < 100; i++) {
     if (numThree[indexThree].textContent == parseInt(i)) {
-      document.getElementById("price-1").textContent = parseInt(i * 799);
+      document.getElementById("price-1").textContent = parseInt(
+        i * priceWeThree
+      );
 
       document.getElementById("noadult").value =
         numThree[indexThree].textContent;
@@ -243,7 +274,7 @@ function nextNumChild() {
 
   for (let i = 0; i < 100; i++) {
     if (numone[indexOne].textContent == parseInt(i)) {
-      document.getElementById("price-2").textContent = parseInt(i * 599);
+      document.getElementById("price-2").textContent = parseInt(i * priceWeOne);
       document.getElementById("nochild").value = numone[indexOne].textContent;
 
       price2 = document.getElementById("price-2").textContent;
@@ -262,7 +293,9 @@ function nextNumChildVip() {
 
   for (let i = 0; i < 100; i++) {
     if (numFour[indexFour].textContent == parseInt(i)) {
-      document.getElementById("price-2").textContent = parseInt(i * 699);
+      document.getElementById("price-2").textContent = parseInt(
+        i * priceWeFour
+      );
       document.getElementById("nochild").value = numFour[indexFour].textContent;
 
       price2 = document.getElementById("price-2").textContent;
@@ -282,7 +315,7 @@ function nextNumSen() {
 
   for (let i = 0; i < 100; i++) {
     if (numTwo[indexTwo].textContent == parseInt(i)) {
-      document.getElementById("price-3").textContent = parseInt(i * 499);
+      document.getElementById("price-3").textContent = parseInt(i * priceWeTwo);
       document.getElementById("nosr").value = numTwo[indexTwo].textContent;
 
       price2 = document.getElementById("price-2").textContent;
@@ -302,7 +335,9 @@ function nextNumSenVip() {
 
   for (let i = 0; i < 100; i++) {
     if (numFive[indexFive].textContent == parseInt(i)) {
-      document.getElementById("price-3").textContent = parseInt(i * 599);
+      document.getElementById("price-3").textContent = parseInt(
+        i * priceWeFive
+      );
 
       document.getElementById("nosr").value = numFive[indexFive].textContent;
 
@@ -323,7 +358,7 @@ function prevNum() {
 
   for (let i = 0; i < 100; i++) {
     if (num[index].textContent == parseInt(i)) {
-      document.getElementById("price-1").textContent = parseInt(i * 699);
+      document.getElementById("price-1").textContent = parseInt(i * price);
       document.getElementById("noadult").value = num[index].textContent;
 
       price2 = document.getElementById("price-2").textContent;
@@ -343,7 +378,9 @@ function prevNumVip() {
 
   for (let i = 0; i < 100; i++) {
     if (numThree[indexThree].textContent == parseInt(i)) {
-      document.getElementById("price-1").textContent = parseInt(i * 799);
+      document.getElementById("price-1").textContent = parseInt(
+        i * priceWeThree
+      );
 
       document.getElementById("noadult").value =
         numThree[indexThree].textContent;
@@ -365,7 +402,7 @@ function prevNumChild() {
 
   for (let i = 0; i < 100; i++) {
     if (numone[indexOne].textContent == parseInt(i)) {
-      document.getElementById("price-2").textContent = parseInt(i * 599);
+      document.getElementById("price-2").textContent = parseInt(i * priceWeOne);
       document.getElementById("nochild").value = numone[indexOne].textContent;
 
       price2 = document.getElementById("price-2").textContent;
@@ -385,7 +422,9 @@ function prevNumChildVip() {
 
   for (let i = 0; i < 100; i++) {
     if (numFour[indexFour].textContent == parseInt(i)) {
-      document.getElementById("price-2").textContent = parseInt(i * 699);
+      document.getElementById("price-2").textContent = parseInt(
+        i * priceWeFour
+      );
       document.getElementById("nochild").value = numFour[indexFour].textContent;
       price2 = document.getElementById("price-2").textContent;
       priceTwo2 = document.getElementById("price-1").textContent;
@@ -404,7 +443,7 @@ function prevNumSen() {
 
   for (let i = 0; i < 100; i++) {
     if (numTwo[indexTwo].textContent == parseInt(i)) {
-      document.getElementById("price-3").textContent = parseInt(i * 499);
+      document.getElementById("price-3").textContent = parseInt(i * priceWeTwo);
 
       document.getElementById("nosr").value = numTwo[indexTwo].textContent;
 
@@ -425,7 +464,9 @@ function prevNumSenVip() {
 
   for (let i = 0; i < 100; i++) {
     if (numFive[indexFive].textContent == parseInt(i)) {
-      document.getElementById("price-3").textContent = parseInt(i * 599);
+      document.getElementById("price-3").textContent = parseInt(
+        i * priceWeFive
+      );
 
       document.getElementById("nosr").value = numFive[indexFive].textContent;
 
