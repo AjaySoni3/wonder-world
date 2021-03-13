@@ -142,9 +142,9 @@ function formatDate(d) {
 let numbers = document.getElementById("box");
 let numbersTwo = document.getElementById("box2");
 let numbersThree = document.getElementById("box3");
-let numbersFour = document.querySelector(".box");
-let numbersFive = document.querySelector(".box2");
-let numbersSix = document.querySelector(".box3");
+let numbersFour = document.querySelector("#box4");
+let numbersFive = document.querySelector("#box5");
+let numbersSix = document.querySelector("#box6");
 
 for (i = 0; i < 100; i++) {
   var span = document.createElement("span");
@@ -164,25 +164,36 @@ for (i = 0; i < 100; i++) {
   numbersThree.appendChild(span);
 }
 
+for (i = 0; i < 100; i++) {
+  var span = document.createElement("span");
+  span.textContent = i;
+  numbersFour.appendChild(span);
+}
+
+for (i = 0; i < 100; i++) {
+  var span = document.createElement("span");
+  span.textContent = i;
+  numbersFive.appendChild(span);
+}
+
+for (i = 0; i < 100; i++) {
+  var span = document.createElement("span");
+  span.textContent = i;
+  numbersSix.appendChild(span);
+}
+
 var num = numbers.getElementsByTagName("span");
 var numone = numbersTwo.getElementsByTagName("span");
 var numTwo = numbersThree.getElementsByTagName("span");
+var numThree = numbersFour.getElementsByTagName("span");
+var numFour = numbersFive.getElementsByTagName("span");
+var numFive = numbersSix.getElementsByTagName("span");
 var index = 0;
 var indexOne = 0;
 var indexTwo = 0;
-
-document.getElementById("date").addEventListener("click", () => {
-  dateEnter = document.getElementById("date").getAttribute("data-value");
-  var myDate = new Date(dateEnter);
-  var myDay = myDate.getDay();
-  if (myDay == 6 || myDay == 0) {
-    price = 799;
-  } else {
-    price = 699;
-  }
-  console.log(myDay);
-  console.log(myDate);
-});
+var indexThree = 0;
+var indexFour = 0;
+var indexFive = 0;
 
 function nextNum() {
   num[index].style.display = "none";
@@ -199,22 +210,21 @@ function nextNum() {
       pricenum3 = document.getElementById("price-3").textContent;
       document.getElementById("total").value =
         parseInt(pricenum1) + parseInt(pricenum2) + parseInt(pricenum3);
-
-      console.log(price1);
     }
   }
 }
 
 function nextNumVip() {
-  num[index].style.display = "none";
-  index = (index + 1) % num.length;
-  num[index].style.display = "initial";
+  numThree[indexThree].style.display = "none";
+  indexThree = (indexThree + 1) % numThree.length;
+  numThree[indexThree].style.display = "initial";
 
   for (let i = 0; i < 100; i++) {
-    if (num[index].textContent == parseInt(i)) {
+    if (numThree[indexThree].textContent == parseInt(i)) {
       document.getElementById("price-1").textContent = parseInt(i * 799);
 
-      document.getElementById("noadult").value = num[index].textContent;
+      document.getElementById("noadult").value =
+        numThree[indexThree].textContent;
 
       price2 = document.getElementById("price-2").textContent;
       priceTwo2 = document.getElementById("price-1").textContent;
@@ -242,19 +252,18 @@ function nextNumChild() {
       totalOne = parseInt(priceTwo2) + parseInt(price2) + parseInt(priceTwo3);
 
       document.getElementById("total").value = totalOne;
-      console.log(price2);
     }
   }
 }
 function nextNumChildVip() {
-  numone[indexOne].style.display = "none";
-  indexOne = (indexOne + 1) % numone.length;
-  numone[indexOne].style.display = "initial";
+  numFour[indexFour].style.display = "none";
+  indexFour = (indexFour + 1) % numFour.length;
+  numFour[indexFour].style.display = "initial";
 
   for (let i = 0; i < 100; i++) {
-    if (numone[indexOne].textContent == parseInt(i)) {
+    if (numFour[indexFour].textContent == parseInt(i)) {
       document.getElementById("price-2").textContent = parseInt(i * 699);
-      document.getElementById("nochild").value = numone[indexOne].textContent;
+      document.getElementById("nochild").value = numFour[indexFour].textContent;
 
       price2 = document.getElementById("price-2").textContent;
       priceTwo2 = document.getElementById("price-1").textContent;
@@ -287,15 +296,15 @@ function nextNumSen() {
 }
 
 function nextNumSenVip() {
-  numTwo[indexTwo].style.display = "none";
-  indexTwo = (indexTwo + 1) % numTwo.length;
-  numTwo[indexTwo].style.display = "initial";
+  numFive[indexFive].style.display = "none";
+  indexFive = (indexFive + 1) % numFive.length;
+  numFive[indexFive].style.display = "initial";
 
   for (let i = 0; i < 100; i++) {
-    if (numTwo[indexTwo].textContent == parseInt(i)) {
+    if (numFive[indexFive].textContent == parseInt(i)) {
       document.getElementById("price-3").textContent = parseInt(i * 599);
 
-      document.getElementById("nosr").value = numTwo[indexTwo].textContent;
+      document.getElementById("nosr").value = numFive[indexFive].textContent;
 
       price2 = document.getElementById("price-2").textContent;
       priceTwo2 = document.getElementById("price-1").textContent;
@@ -328,15 +337,16 @@ function prevNum() {
 }
 
 function prevNumVip() {
-  num[index].style.display = "none";
-  index = (index - 1 + num.length) % num.length;
-  num[index].style.display = "initial";
+  numThree[indexThree].style.display = "none";
+  indexThree = (indexThree - 1 + numThree.length) % numThree.length;
+  numThree[indexThree].style.display = "initial";
 
   for (let i = 0; i < 100; i++) {
-    if (num[index].textContent == parseInt(i)) {
+    if (numThree[indexThree].textContent == parseInt(i)) {
       document.getElementById("price-1").textContent = parseInt(i * 799);
 
-      document.getElementById("noadult").value = num[index].textContent;
+      document.getElementById("noadult").value =
+        numThree[indexThree].textContent;
 
       price2 = document.getElementById("price-2").textContent;
       priceTwo2 = document.getElementById("price-1").textContent;
@@ -369,14 +379,14 @@ function prevNumChild() {
 }
 
 function prevNumChildVip() {
-  numone[indexOne].style.display = "none";
-  indexOne = (indexOne - 1 + numone.length) % numone.length;
-  numone[indexOne].style.display = "initial";
+  numFour[indexFour].style.display = "none";
+  indexFour = (indexFour - 1 + numFour.length) % numFour.length;
+  numFour[indexFour].style.display = "initial";
 
   for (let i = 0; i < 100; i++) {
-    if (numone[indexOne].textContent == parseInt(i)) {
+    if (numFour[indexFour].textContent == parseInt(i)) {
       document.getElementById("price-2").textContent = parseInt(i * 699);
-      document.getElementById("nochild").value = numone[indexOne].textContent;
+      document.getElementById("nochild").value = numFour[indexFour].textContent;
       price2 = document.getElementById("price-2").textContent;
       priceTwo2 = document.getElementById("price-1").textContent;
       priceTwo3 = document.getElementById("price-3").textContent;
@@ -409,15 +419,15 @@ function prevNumSen() {
 }
 
 function prevNumSenVip() {
-  numTwo[indexTwo].style.display = "none";
-  indexTwo = (indexTwo - 1 + numTwo.length) % numTwo.length;
-  numTwo[indexTwo].style.display = "initial";
+  numFive[indexFive].style.display = "none";
+  indexFive = (indexFive - 1 + numFive.length) % numFive.length;
+  numFive[indexFive].style.display = "initial";
 
   for (let i = 0; i < 100; i++) {
-    if (numTwo[indexTwo].textContent == parseInt(i)) {
+    if (numFive[indexFive].textContent == parseInt(i)) {
       document.getElementById("price-3").textContent = parseInt(i * 599);
 
-      document.getElementById("nosr").value = numTwo[indexTwo].textContent;
+      document.getElementById("nosr").value = numFive[indexFive].textContent;
 
       price2 = document.getElementById("price-2").textContent;
       priceTwo2 = document.getElementById("price-1").textContent;
@@ -443,7 +453,19 @@ Vip.addEventListener("click", () => {
   Vip.classList.add("bg-color");
   Gen.classList.remove("bg-color");
   Gen.setAttribute("style", "background-color: transparent; ");
-
+  numbers.setAttribute("style", "display:none");
+  numbersTwo.setAttribute("style", "display:none");
+  numbersThree.setAttribute("style", "display:none");
+  document.getElementById("price-2").textContent = 0;
+  document.getElementById("price-1").textContent = 0;
+  document.getElementById("price-3").textContent = 0;
+  document.getElementById("nochild").value = 0;
+  document.getElementById("noadult").value = 0;
+  document.getElementById("nosr").value = 0;
+  document.getElementById("total").value = 0;
+  numbersFour.setAttribute("style", "opacity:1");
+  numbersFive.setAttribute("style", "opacity:1");
+  numbersSix.setAttribute("style", "opacity:1");
   adultNext.removeAttribute("onclick");
   adultNext.setAttribute("onclick", "nextNumVip()");
   adultPrev.removeAttribute("onclick");
@@ -481,4 +503,5 @@ Gen.addEventListener("click", () => {
   srPrev.removeAttribute("onclick");
   srPrev.setAttribute("onclick", "prevNumSen()");
   type.textContent = "General";
+  window.location.reload();
 });
